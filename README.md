@@ -25,15 +25,15 @@
 3.2 stream常用操作  
 3.2.1 Collect(toList())  
 3.2.2 map  
-3.2.3 filter  
-3.2.4 flatMap
-3.2.5 reduce(max,average, min,count)
-3.3 数据的并行化处理
-3.4 收集器
-3.5 元素顺序
-4 **Utils工具类的使用**
+3.2.3 filter    
+3.2.4 flatMap  
+3.2.5 reduce(max,average, min,count)  
+3.3 数据的并行化处理  
+3.4 收集器  
+3.5 元素顺序  
+4 **Utils工具类的使用**  
   
-5 **函数编程扩展**  
+5 **函数编程扩展**    
 5.1 科里化(curry)  
 5.2 组合(compose)  
 5.3 函数式编程redux的应用  
