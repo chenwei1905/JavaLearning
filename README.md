@@ -1,5 +1,5 @@
 ## 目录
-1 [**集合**](collection.md)  
+1 [**集合**](https://github.com/chenwei1905/JavaLearning/blob/master/Collection.md)  
 1.1 [集合的概念]()  
 1.2 [集合的API]()    
 1.3 [Collection接口]()    
