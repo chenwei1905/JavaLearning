@@ -38,7 +38,7 @@
 5.2 组合(compose)  
 5.3 函数式编程redux的应用  
 
-6 **关系代数**  
+6 [**关系代数**](https://github.com/chenwei1905/JavaLearning/blob/master/RelationAlgebra.md)  
 6.1 基本运算  
 6.1.1 选择运算  
 6.1.2 投影运算  
