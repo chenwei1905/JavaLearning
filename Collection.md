@@ -14,9 +14,7 @@ Set中的数据对象没有顺序且不可以重复;
 List 中的数据对象有顺序且可以重复;  
 Map 接口定义了存储”键(key)-值(value)映射对的方法”  
 ## Collection接口  
-接口 | 说明  
-----｜ ----  
-Boolean add(Object element) | 增加元素  
-Boolean remove(Object element) ｜ 删除元素  
-Boolean contains(Object element) ｜ 包含元素  
-
+接口定义  | 说明
+------------ | -------------
+Boolean add(Object element) | 增加元素
+Boolean remove(Object element| 删除元素
