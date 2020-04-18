@@ -9,8 +9,14 @@ Collection函数库是java.util包下的一些接口和类，类是用来产生�
 如下是集合框架简图:  
 ![集合框架]()
 ## 集合的API
-Collection接口：定义了存取一组对象的方法，其子接口Set和List分别定义了存储方式;
-Set中的数据对象没有顺序且不可以重复;
-List 中的数据对象有顺序且可以重复;
-Map 接口定义了存储”键(key)-值(value)映射对的方法”
-## Collection接口
+Collection接口：定义了存取一组对象的方法，其子接口Set和List分别定义了存储方式;  
+Set中的数据对象没有顺序且不可以重复;  
+List 中的数据对象有顺序且可以重复;  
+Map 接口定义了存储”键(key)-值(value)映射对的方法”  
+## Collection接口  
+接口 | 说明
+----｜ ----
+Boolean add(Object element) | 增加元素
+Boolean remove(Object element) ｜ 删除元素
+Boolean contains(Object element) ｜ 包含元素
+
