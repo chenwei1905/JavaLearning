@@ -162,6 +162,27 @@ Java 8 起为 Collection 集合新增了一个 removeIf(Predicate filter) 方法
     }
 ```
 ## 高阶函数
+高阶函数（Higher-order Function）只是一个消费或产生函数的函数。
+```java
+// functional/ProduceFunction.java
+
+import java.util.function.*;
+
+interface
+FuncSS extends Function<String, String> {} // [1]
+
+public class ProduceFunction {
+  static FuncSS produce() {
+    return s -> s.toLowerCase(); // [2]
+  }
+  public static void main(String[] args) {
+    FuncSS f = produce();
+    System.out.println(f.apply("YELLING"));
+  }
+}
+
+```
+这里的produce()就是高阶函数
 ## 闭包
 说到闭包,需要知道约束变量和自由变量,
 1. 约束变量指的是函数内部的变量和用作函数参数的变量
