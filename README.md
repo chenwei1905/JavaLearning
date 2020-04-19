@@ -1,5 +1,5 @@
 ## 目录
-1 [**集合**](https://github.com/chenwei1905/JavaLearning/blob/master/Collection.md)  
+### [**集合**](https://github.com/chenwei1905/JavaLearning/blob/master/Collection.md)  
 1. 集合的概念
 2. 集合的类型  
 3. Collection接口    
@@ -11,7 +11,8 @@
 9. Map的hash值说明  
 10. \*集合接口线程的安全性  
 11. \*集合内部实现算法的比较和场景说明  
-2 **函数式编程**   
+
+### [**函数式编程**](https://github.com/chenwei1905/JavaLearning/blob/master/Collection.md)
 2.0 系统的整体设计  
 2.1 函数式编程简介  
 2.2 Lambda表达式介绍  
