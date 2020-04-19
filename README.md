@@ -62,10 +62,11 @@
 
 
 文献参考：
-1. [onJava8](https://github.com/LingCoder/OnJava8)
-2. [连接1](https://wenku.baidu.com/view/38f17b1fc5da50e2524d7fad.html)
-3. [连接2](https://www.cnblogs.com/snowInPluto/p/5981400.html)
-4. [连接3](http://c.biancheng.net/view/6805.html)
+1. 《计算机构造与解释》
+2. [onJava8](https://github.com/LingCoder/OnJava8)
+3. [连接1](https://wenku.baidu.com/view/38f17b1fc5da50e2524d7fad.html)
+4. [连接2](https://www.cnblogs.com/snowInPluto/p/5981400.html)
+5. [连接3](http://c.biancheng.net/view/6805.html)
 
 
 
