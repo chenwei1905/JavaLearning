@@ -11,7 +11,7 @@
 9. Map的hash值说明  
 10. \*集合接口线程的安全性  
 11. \*集合内部实现算法的比较和场景说明  
-
+12. \*并发编程下 volatile关键字和atomic包
 ### [**函数式编程**](https://github.com/chenwei1905/JavaLearning/blob/master/FunctionProgramming.md)
 1. 软件系统的整体设计说明
 2. 函数式编程简介  
@@ -73,6 +73,7 @@
 3. [连接1](https://wenku.baidu.com/view/38f17b1fc5da50e2524d7fad.html)
 4. [连接2](https://www.cnblogs.com/snowInPluto/p/5981400.html)
 5. [连接3](http://c.biancheng.net/view/6805.html)
+6. [并发编程](https://www.cnblogs.com/java-chen-hao/p/9968544.html)
 
 
 
