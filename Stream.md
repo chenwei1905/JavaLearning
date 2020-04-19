@@ -1,4 +1,4 @@
-# stream
+# [stream](https://github.com/chenwei1905/JavaLearning)
 ## Stream简介
 在程序编写过程中,集合的处理应该是很普遍的;Java8对collection处理花了很大的功夫，如果从JDK7过度到JDK8,这一块也可能是我们感受最为明显的;
 Java8中引入了流的概念,这个流和我们使用的IO中的流并不太相同;
