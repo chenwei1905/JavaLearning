@@ -10,6 +10,7 @@
 函数式编程作为一种编程范式，在科学领域，是一种编写计算机程序数据结构和元素的方式，它把计算过程当做是数学函数的求值，而避免更改状态和可变数据;
 一般来讲就是数学上怎么用,你编程就可以这么编写;因为函数式编程没有赋值的负作用;
 相同的输入只能得到相同的输出;并且函数可以用作变量的命名,可以提供给过程作为参数,可以作为返回结果,可以包含在数据接口中,";  
+当函数作为参数传递的时候,一般可以叫做回调函数  
 **函数式编程语言里面没有for/next循环，因为这逻辑意味着有状态的改变相替代的是，这种循环逻辑在函数式编程语言里是通过递归、把函数当成参数传递的方式实现的;**
 
 
@@ -54,8 +55,14 @@ public void cosum(Integer money, Consumer<Integer> c)  {
  }
  /**
   * 随机产生sum个数量得集合
-  *
-  
+  */
+  public List<Integer> supplier(int sum, Supplier<Integer> sup) {
+      List<Integer> list = new ArrayList<Integer>();
+      for (int i = 0; i < sum; i++) {
+          list.add(sup.get());
+      }
+      return list;
+  }
 
 ```
 
