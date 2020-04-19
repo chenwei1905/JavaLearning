@@ -65,8 +65,102 @@ public void cosum(Integer money, Consumer<Integer> c)  {
   }
 
 ```
+3. Function<T,R>: 函数型接口(R apply (T t)) --输入一个类型得参数, 输出一个类型得参数
 
+```java
+/**
+ * 函数型接口: Function<R, T>
+ */
+ @Test
+ public void test() {
+     String s = strOperar("asdf", x-> x.substring(0,2));
+     System.out.println(s);
+     String s1 = strOperar("asdf", x -> x.trim());
+     System.out.println(s1);
+ }
 
+ /**
+  * 字符串操作
+  */
+  public String strOperar(String str, Function<String, string> fun) {
+      return fun.apply(str);
+  }
+```
+
+4. Predicate<T>：断言型接口（boolean test（T t）） :也是我们常说的谓词表达式 输入一个参数，输出一个boolean类型得返回值
+```java
+ @Test 
+ public void test() {
+     List<Integer> list = new Arraylist<>();
+     list.add(102);
+     list.add(172);
+     list.add(13);
+     list.add(82);
+     List<Integer> list = filterInt(list, (x) -> (x > 100));
+     for (Integer i: list) {
+         System.out.println(i);
+     }
+ }
+
+/**
+ * 过滤集合
+ */
+ public List<Integer> filterInt(List<Integer> list, Predicate<Integer> pre) {
+     List<Integer> l = new ArrayList<>();
+     for (Integer i: list) {
+         if (pre.test(i)) {
+             l.add(integer);
+         }
+     }
+     return l;
+ }
+
+```
+
+## lambda 遍历Collection集合
+因为java8 为Iterable接口新增了一个ForEach(Consumer action)默认方法，该方法所需要得参数类型是一个函数式接口，而Iterable接口是Collection接口的父接口，因此Collection集合也可以直接调用该方法;  
+当程序调用的Iterable的`forEach(Consumer action)`遍历集合元素时，程序会依次将集合元素传给`Consumer`的`accept(T t)`方法，(该接口中唯一的抽象方法),正因为Consumer是函数式接口，因此可以用Lambda表达式来遍历元素
+
+```java 
+ @Test
+ public void test() {
+     Collection c = new HashSet();
+     c.add("name1");
+     c.add("name2");
+     c.add("name3");
+     c.forEach(item -> System.out :: println);
+
+ }
+
+```
+##  Lambda表达式遍历Iterator迭代器
+java8为了Iterator引入了一个`forEachRemaining(Consumer action) `默认方法，该方法所需的Consumer参数同样也是函数式接口，当程序调用Iterator的`forEachRemaining(Consumer action)`遍历集合元素时，程序会依次将集合元素传给`Consumer`的`accept(T t)`方法，（该接口中唯一的抽象方法)
+```java
+    @Test
+    public void test() {
+        Collection c = new HashSet();
+        c.add("name1");
+        c.add("name2");
+        c.add("name3");
+        Iterator it = c.iterator();
+
+        it.forEachRemaining(item -> System.out::println);
+    }
+
+```
+## Predicate操作Collection集合
+Java 8 起为 Collection 集合新增了一个 removeIf(Predicate filter) 方法，该方法将会批量删除符合 filter 条件的所有元素。该方法需要一个 Predicate 对象作为参数，Predicate 也是函数式接口，因此可使用 Lambda 表达式作为参数。
+
+```java 
+    @Test
+    public void test() {
+        Collection c = new HashSet();
+        c.add(new String("name1"));
+        c.add(new String("name2"));
+        c.add(new String("name3"));
+        c.removeIf(ele -> ((String)ele).length() < 12);
+    }
+```
 ## 高阶函数
 ## 闭包
 说到闭包,需要知道约束变量和自由变量,
