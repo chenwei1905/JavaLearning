@@ -142,6 +142,30 @@ Void clear();|
 
 
 ## \* 集合接口线程的安全性
+分类|实现|线程安全|排序|特点
+---|----|------|----|---
+List| ArrayList| 否|插入排序| 随机访问性能高
+List| LinkedList| 否| 插入排序| 随机访问性能低,头尾操作性能高,不占用冗余空间
+List| Vector| 是| 插入排序| 并发性能不高,线程越多性能越差
+List| CopyOnWriteArrayList|是| 插入排序 |并发性能高| 占用冗余空间
+Map | HashMap | 否|无序| 读写性能高| 接近于O(1)
+Map | LinkedHashMap | 否 | 插入排序 |可按插入顺序遍历,性能与HashMap接近
+Map | HashTable | 是 | 无序 | 并发性能不高,线程越多性能越差
+Map | ConcurrentHashMap | 是 | 无序 | 并发性能比HashTable高
+Map | TreeMap | 否 | key升序或降序 | 有序,读写性能O(logN)
+Map | ConcurrentSkipListMap | 是 | key升序或降序 | 线程安全,性能与并发数无关,内存空间占用较大
+Set | HashSet | 否 | 无序 | 同hashMap
+Set | LinkedHashSet | 否 | 插入排序 | 同LinkedHashMap
+Set | TreeSet | 否 | 对象升序或降序 | 同TreeMap
+Set | ConcurrentSkipListSet| 否 | 无序| 同ConcurrentSkipListMap
+Queue | ConcurrentLinkedQueue | 是 | 插入顺序 | 非阻塞
+Queue | LinkedBlockingQueue | 是 | 插入排序 | 阻塞,无界
+Queue | ArrayBlockingQueue | 是 | 插入排序 | 阻塞,有界
+Queue | SynchronousQueue | 是 | | 不存储任何元素,向其中插入元素的线程会阻塞,直到有另一个线程将这个元素取走,反之亦然
+Queue | PriorityQueue | 否 | 对象自然序或者自定义排序| 根据元素的优先级进行排序,保证自然序或自定义序最小的对象先出列
+Deque | ConcurrentLinkedDeque | 是 | 插入排序 | 非阻塞
+Deque | LinkedBlockingDeque | 是 | 插入顺序 | 阻塞,无序
+
 
 ## \* 集合内部实现算法的比较和场景说明
 ## \* 并发编程 volatile关键字和atomic包
