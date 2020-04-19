@@ -188,5 +188,114 @@ public class ProduceFunction {
 1. 约束变量指的是函数内部的变量和用作函数参数的变量
 2. 不是约束变量都可以称作自由变量
 闭包指的是一个持有自由变量的函数和该自由变量所组成的环境就是闭包;
+```java
+
+// functional/Closure1.java
+// 这里函数makeFun调用了外部变量i就形成了闭包
+import java.util.function.*;
+
+public class Closure1 {
+  int i;
+  IntSupplier makeFun(int x) {
+    return () -> x + i++;
+  }
+}
+```
+下面的编译会出错;从 Lambda 表达式引用的局部变量必须是 final 或者是等同 final 效果的。
+```java
+// functional/Closure3.java
+
+// {WillNotCompile}
+import java.util.function.*;
+
+public class Closure3 {
+  IntSupplier makeFun(int x) {
+    int i = 0;
+    // x++ 和 i++ 都会报错：
+    return () -> x++ + i++;
+  }
+}
+```
 ## 函数组合
+函数组合（Function Composition）意为“多个函数组合成新函数”。它通常是函数式编程的基本组成部分。
+一些 java.util.function 接口中包含支持函数组合的方法;
+
+组合方法 | 描述
+--------| -------
+andThen(argument) | 根据参数执行原始操作
+compose(argument) | 根据参数执行原始操作
+and(argument) | 短路逻辑与原始谓词和参数谓词
+or(argument)  | 短路逻辑或原始谓词和参数谓词
+negate() | 该谓词的逻辑否谓词
+
+```java
+
+
+// functional/FunctionComposition.java
+
+import java.util.function.*;
+
+public class FunctionComposition {
+  static Function<String, String>
+    f1 = s -> {
+      System.out.println(s);
+      return s.replace('A', '_');
+    },
+    f2 = s -> s.substring(3),
+    f3 = s -> s.toLowerCase(),
+    f4 = f1.compose(f2).andThen(f3);
+  public static void main(String[] args) {
+    System.out.println(
+      f4.apply("GO AFTER ALL AMBULANCES"));
+  }
+}
+
+\\AFTER ALL AMBULANCES
+\\_fter _ll _mbul_nces
+```
+下例是 Predicate 的逻辑运算演示.代码示例：
+```java
+
+// functional/PredicateComposition.java
+
+import java.util.function.*;
+import java.util.stream.*;
+
+public class PredicateComposition {
+  static Predicate<String>
+    p1 = s -> s.contains("bar"),
+    p2 = s -> s.length() < 5,
+    p3 = s -> s.contains("foo"),
+    p4 = p1.negate().and(p2).or(p3);
+  public static void main(String[] args) {
+    Stream.of("bar", "foobar", "foobaz", "fongopuckey")
+      .filter(p4)
+      .forEach(System.out::println);
+  }
+}
+\\foobar,foobaz
+
+```
+
 ## 科里化和部分求值 
+科里化就是将一个多参数的函数，转换为一系列单参数函数
+```java
+
+import java.util.function.*;
+
+public class Curry3Args {
+   public static void main(String[] args) {
+      Function<String,
+        Function<String,
+          Function<String, String>>> sum =
+            a -> b -> c -> a + b + c;
+      Function<String,
+        Function<String, String>> hi =
+          sum.apply("Hi ");
+      Function<String, String> ho =
+        hi.apply("Ho ");
+      System.out.println(ho.apply("Hup"));
+   }
+}
+\\Hi Ho Hup
+```
