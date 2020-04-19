@@ -1,6 +1,6 @@
 ## 目录
 1 [**集合**](https://github.com/chenwei1905/JavaLearning/blob/master/Collection.md)  
-1.1 [集合的概念]()  
+1.1. [集合的概念]()  
 1.2 [集合的API]()    
 1.3 [Collection接口]()    
 1.4 [Iterator接口]()    
@@ -60,6 +60,12 @@
 6.4.4 左外连接  
 6.4.5 全外连接  
 
+
+文献参考：
+1. [onJava8](https://github.com/LingCoder/OnJava8)
+2. [连接1](https://wenku.baidu.com/view/38f17b1fc5da50e2524d7fad.html)
+3. [连接2](https://www.cnblogs.com/snowInPluto/p/5981400.html)
+4. [连接3](http://c.biancheng.net/view/6805.html)
 
 
 
