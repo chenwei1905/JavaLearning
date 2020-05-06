@@ -36,6 +36,7 @@
 9. 收集器  
 10. 元素顺序 
 11. Stream操作collection集合 
+12. \* 深入理解Stream流水线
 ### **Utils工具类的使用**  
   
 
