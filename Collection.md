@@ -28,6 +28,7 @@ Boolean addAll(Collection c)|
 Boolean removeAll(Collection c)|
 Boolean retainAll(Collection c)|
 Object[] toArray()|
+spliterator| 可以分离迭代器(JAVA8)
 
 ```java
 \\接口练习
