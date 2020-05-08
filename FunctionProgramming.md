@@ -189,6 +189,25 @@ public class ProduceFunction {
 1. 约束变量指的是函数内部的变量和用作函数参数的变量
 2. 不是约束变量都可以称作自由变量
 闭包指的是一个持有自由变量的函数和该自由变量所组成的环境就是闭包;
+或者是javascript中什么子函数获取父函数的局部变量,例如下面的f2函数就是闭包,(这一说法在概念上不清晰),把f2作为返回,就可以让f1的局部变量一直保存在内存中;
+
+```javascript
+  function f1(){
+
+　　　　var n=999;
+
+　　　　function f2(){
+　　　　　　alert(n); 
+　　　　}
+
+　　　　return f2;
+　　}
+
+　　var result=f1();
+　　result(); // 999
+
+```
+
 ```java
 
 // functional/Closure1.java
@@ -202,7 +221,7 @@ public class Closure1 {
   }
 }
 ```
-下面的编译会出错;从 Lambda 表达式引用的局部变量必须是 final 或者是等同 final 效果的。
+下面的编译会出错;从 Lambda 表达式引用的局部变量或约束变量必须是 final 或者是等同 final 效果的。
 ```java
 // functional/Closure3.java
 
