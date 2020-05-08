@@ -1,6 +1,7 @@
 # [集合工具类的使用](https://github.com/chenwei1905/JavaLearning)
 ## 基本工具类的介绍
 目前应用的集合类在`com.dexi.utils.core.collection`中
+[官方文档地址](http://docs.dxids.com/server_framework/utils/)
 ## 类的基本介绍
 
 ### ArrayIter
